@@ -73,9 +73,12 @@ const Form = (props) => {
               
               console.log("before if: "+Paste)
 if(Paste){
-  document.getElementById('pasteandsearch').click();
+
 
   
+  document.getElementById('pasteandsearch').click();
+
+
   setPaste(false)
   
 }
