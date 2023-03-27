@@ -2,14 +2,8 @@
 
 # dependencies
 /node_modules
-/Server/node_modules
-/Client/my-app/node_modules
-/Client/my-app/.vscode
-.vscode/settings.json
 /.pnp
 .pnp.js
-/Client/my-app
-/Client/frontend
 
 # testing
 /coverage
