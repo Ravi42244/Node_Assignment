@@ -171,6 +171,35 @@ app.post('/', async (req, res) => {
  res.status(500).json({error : err.message});
  }});
 
+ app.patch('/', async (req, res) => {
+  try{
+    
+     const {
+         firstName,
+         lastName,
+         email,
+         reportTo,
+         role,
+         id
+      } = req.body
+      const originalData= await emp.findById(id)
+const managerObjId = await Promise.all (reportTo.map(async(element)=>{
+ const manager=  await emp.findById(element)
+ return (manager._id)
+}))
+
+const managerUpdate= [...originalData.reportTo,...managerObjId]
+console.log((managerUpdate))
+       await emp.findByIdAndUpdate(id,{firstName,lastName,role,reportTo: managerUpdate})     
+    const updatedEmp = await emp.findById(id)
+
+   
+   
+   res.status(201).json(updatedEmp)
+ 
+ }catch(err){
+ res.status(500).json({error : err.message});
+ }});
 
 
 
