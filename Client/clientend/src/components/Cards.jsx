@@ -15,7 +15,6 @@ import Card from '../components/Card.jsx';
     
     
     useEffect(()=>{
-        console.log(props.data.reportTo)
         if(props.data.reportTo){
             
 
@@ -32,7 +31,7 @@ import Card from '../components/Card.jsx';
         <div className='container text-center'>
         <div className='row my-5'>
             <div className='col'>
-       {<Card firstName={props.data.firstName} lastName={props.data.lastName} email={props.data.email} role={props.data.role} />}
+       {(props.data.firstName) ? (<Card firstName={props.data.firstName} lastName={props.data.lastName} email={props.data.email} role={props.data.role} />) : <>User Not Found!</>}
        </div>
        </div>
       

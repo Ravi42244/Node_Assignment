@@ -1,6 +1,5 @@
 import React,{useState} from 'react' 
 import NavBar from './NavBar';
-import Form from './Form';
 import Cards from './Cards';
 import FormwithFormik from './FormwithFormik'
  
@@ -21,7 +20,6 @@ setEmp_data(data)
 
 <>
 <NavBar/>
-{/* <Form getData={getData}/> */}
 <FormwithFormik getData={getData}/>
 {(Emp_data !== 'before') ? <Cards data={Emp_data} /> : <></>}
 

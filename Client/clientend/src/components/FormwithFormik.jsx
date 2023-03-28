@@ -1,7 +1,10 @@
 import React,{useState, useEffect} from 'react'
 import {Formik,Form,Field } from 'formik'
 
+
 import axios from "axios";
+
+
 
 function FormwithFormik(props) {
  const [Paste, setPaste] = useState(false)
@@ -19,15 +22,14 @@ function FormwithFormik(props) {
 
 const onSubmit = async (values) => {
    let  email = values.email;
-    
     axios
-      .get(`http://localhost:3001/${email}`)
+      .get(`${window.env.BACKEND_URL}${email}`)
       .then((res) => {
         props.getData(res.data);
       })
       .catch((err) => {
         props.getData(err);
-        console.log(err);
+        console.error(err);
       });
       
   };
@@ -65,7 +67,7 @@ const onSubmit = async (values) => {
           type="button"
           onClick={async () => {
            
-            const copiedData= await navigator.clipboard.readText();
+            const copiedData=  await navigator.clipboard.readText();
             
             setcopiedEmail({email:copiedData})
           setPaste(true)
