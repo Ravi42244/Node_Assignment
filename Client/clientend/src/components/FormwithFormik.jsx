@@ -73,11 +73,12 @@ function FormwithFormik(props) {
               id="pasteandsearch"
               type="button"
               onClick={async () => {
-                setloading(true);
-
+                setloading(true)
                 const copiedData = await navigator.clipboard.readText();
+                
 
                 setcopiedEmail({ email: copiedData });
+                setPaste(true)
               }}
               className="btn btn-primary container col mx-3"
             >
@@ -95,9 +96,10 @@ function FormwithFormik(props) {
             marginLeft: "633px",
             zIndex: 10,
             position: "absolute",
+            
           }}
         >
-          <div className="spinner-border text-primary" role="status">
+          <div className="spinner-border text-primary"  role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
         </div>
