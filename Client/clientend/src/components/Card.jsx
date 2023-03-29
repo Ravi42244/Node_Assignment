@@ -7,7 +7,6 @@ import 'react-toastify/dist/ReactToastify.css';
  const Card = (props)=>{
 
  
-
 const Onclickbtn = async ()=>{
 
 
