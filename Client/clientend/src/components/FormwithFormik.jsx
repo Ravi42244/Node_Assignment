@@ -22,7 +22,7 @@ function FormwithFormik(props) {
 
 const onSubmit = async (values) => {
    let  email = values.email;
-    axios
+  await  axios
       .get(`${window.env.BACKEND_URL}${email}`)
       .then((res) => {
         props.getData(res.data);
