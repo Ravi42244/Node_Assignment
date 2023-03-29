@@ -10,6 +10,7 @@
 .pnp.js
 /Client/my-app
 /Client/frontend
+node_modules/
 
 # testing
 /coverage
