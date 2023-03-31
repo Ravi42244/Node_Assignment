@@ -48,7 +48,7 @@ function FormwithFormik(props) {
         <Form>
           <div className="mb-3 text-center">
             <label className="form-label " style={formTitle}>
-              Employee Name
+              Search Employee
             </label>
             <Field
               name="email"
@@ -56,6 +56,7 @@ function FormwithFormik(props) {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               required={true}
+              placeholder="Enter Employee Email"
             />
           </div>
           <div className="row">

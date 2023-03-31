@@ -46,7 +46,7 @@ toast.error("Auto Copying not supported in your's browser!", {
     return (
       <>
       
-        <div className='d-flex p-2 '>
+        <div className=' p-2 '>
         
         <div className="card text-center container " >
   
