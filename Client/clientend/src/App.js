@@ -1,8 +1,10 @@
 
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from '../src/components/Home.jsx';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import About from './components/About.jsx';
 
 function app() {
   return (
@@ -19,9 +21,14 @@ draggable
 pauseOnHover
 theme="light"
 />
-     <Home/>
-    
-   </>
+<Router>
+    <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<About/>} />
+    </Routes>
+</Router>
+
+    </>
   );
 }
 
