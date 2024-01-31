@@ -17,9 +17,17 @@ function FormwithFormik(props) {
   };
 
   const onSubmit = async (values) => {
-    let email = values.email;
+    const config = {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+      }
+    };
+    
+    let email = values?.email.toLowerCase();
+    console.log(process.env.REACT_APP_BACKEND_URL)
     await axios
-      .get(`${window.env.BACKEND_URL}${email}`)
+      .get(`${process.env.REACT_APP_BACKEND_URL}/${email}`,config)
       .then((res) => {
         setloading(false);
         props.getData(res.data);
@@ -56,7 +64,7 @@ function FormwithFormik(props) {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               required={true}
-              placeholder="Enter Employee Email"
+              placeholder="Enter Employee Work Email"
             />
           </div>
           <div className="row">

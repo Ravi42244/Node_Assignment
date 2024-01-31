@@ -6,3 +6,13 @@
 body{
   font-family: 'Overpass', sans-serif;
 }
+
+.empName{
+  font-weight: bold;
+}
+.aboutUsPg{
+  font-family: "Overpass";
+  width: 55%;
+  margin-top: 10px;
+  
+}
